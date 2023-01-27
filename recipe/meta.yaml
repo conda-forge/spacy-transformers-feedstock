@@ -34,7 +34,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - spacy >=3.4.0,<4.0.0
-    - transformers >=3.4.0,<4.26.0
+    - transformers >=3.4.0,<4.27.0
     - pytorch >=1.6.0
     - srsly >=2.4.0,<3.0.0
     - spacy-alignments >=0.7.2,<1.0.0
