@@ -1,6 +1,6 @@
 {% set name = "spacy-transformers" %}
 {% set module_name = "spacy_transformers" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 81e9127dbc62ea979ac01b999cbf03d63fd0720317793c158c8b9ab8d44ad437
+  sha256: 6fc0e0da2391974630c93ddea86ec2dc4941c95555a2f3416aa96fd507415c86
 
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - spacy >=3.4.0,<4.0.0    
+    - spacy >=3.4.0,<4.0.0
     - transformers >=3.4.0,<4.26.0
     - pytorch >=1.6.0
     - srsly >=2.4.0,<3.0.0
