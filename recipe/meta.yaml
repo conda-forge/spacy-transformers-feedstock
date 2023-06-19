@@ -1,6 +1,6 @@
 {% set name = "spacy-transformers" %}
 {% set module_name = "spacy_transformers" %}
-{% set version = "1.2.4" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 859c2093fad9ff41005bc55c0018d4290bdd62454f76bddbcf318aae85f307b5
+  sha256: f952105dc7dfa1dcd1e9012bd997ef108046231a8ac2c359a2d23e121d04388c
 
 
 build:
@@ -34,7 +34,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - spacy >=3.5.0,<4.0.0
-    - transformers >=3.4.0,<4.30.0
+    - transformers >=3.4.0,<4.31.0
     - pytorch >=1.8.0
     - srsly >=2.4.0,<3.0.0
     - spacy-alignments >=0.7.2,<1.0.0
