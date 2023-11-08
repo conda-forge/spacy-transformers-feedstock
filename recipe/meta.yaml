@@ -1,6 +1,6 @@
 {% set name = "spacy-transformers" %}
 {% set module_name = "spacy_transformers" %}
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c5f51e3ca2e647502b86cd1cd5936371aea49497462f4a360dd18bb1e8c4eb3c
+  sha256: 43ca15d26c3c3ce16c70571db1865f4e46af355432a9674b01d6f89435f86a13
 
 
 build:
