@@ -39,9 +39,11 @@ requirements:
 test:
   requires:
     - pytest
+    - pip
   imports:
     - spacy_transformers
   commands:
+    - pip check
     - python -m pytest -vv --color=yes --tb=native --pyargs spacy_transformers
 
 about:
