@@ -1,20 +1,16 @@
-{% set name = "spacy-transformers" %}
-{% set module_name = "spacy_transformers" %}
-{% set version = "1.3.5" %}
+{% set version = "1.3.6" %}
 
 package:
-  name: {{ name }}
+  name: spacy-transformers
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/s/spacy-transformers/spacy_transformers-{{ version }}.tar.gz
   sha256: accdfe44a26517714c6990ec6bae88796eb348286fea7ba20ba2736f70c83fa1
-
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [win]
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
 
 requirements:
   build:
@@ -22,31 +18,31 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('cxx') }}
+    - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
   host:
-    - python
-    - pip
+    - cython >=0.25
     - numpy
+    - pip
+    - python
     - setuptools
     - wheel
-    - cython >=0.25
   run:
+    - numpy
     - python
-    - {{ pin_compatible('numpy') }}
-    - spacy >=3.5.0,<4.0.0
-    - transformers >=3.4.0,<4.37.0
     - pytorch >=1.8.0
-    - srsly >=2.4.0,<3.0.0
+    - spacy >=3.5.0,<4.1.0
     - spacy-alignments >=0.7.2,<1.0.0
+    - srsly >=2.4.0,<3.0.0
+    - transformers >=3.4.0,<4.42.0
 
 test:
-#  requires:
-#    - pytest
+  requires:
+    - pytest
   imports:
-    - {{ module_name }}
-#  commands:
-#    - python -m pytest --tb=native --pyargs {{ module_name }}
+    - spacy_transformers
+  commands:
+    - python -m pytest -vv --color=yes --tb=native --pyargs spacy_transformers
 
 about:
   home: https://spacy.io
@@ -58,7 +54,7 @@ about:
     models via Hugging Face's transformers in spaCy. The result is convenient
     access to state-of-the-art transformer architectures, such as BERT, GPT-2,
     XLNet, etc.
-  doc_url: https://github.com/explosion/spacy-transformers
+  doc_url: https://spacy.io/usage/embeddings-transformers
   dev_url: https://github.com/explosion/spacy-transformers
 
 extra:
