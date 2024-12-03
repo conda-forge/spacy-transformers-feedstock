@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3764ada8652a3984bd996fc301e4a7b4d8379228be50f7535070d5ee0d47beeb
 
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -23,6 +23,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -32,7 +33,6 @@ requirements:
     - cython >=0.25
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - spacy >=3.5.0,<4.0.0
     - transformers >=3.4.0,<4.37.0
     - pytorch >=1.8.0
