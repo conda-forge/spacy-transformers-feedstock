@@ -11,7 +11,7 @@ Summary: Use pretrained transformers like BERT, XLNet and GPT-2 in spaCy
 
 Development: https://github.com/explosion/spacy-transformers
 
-Documentation: https://github.com/explosion/spacy-transformers
+Documentation: https://spacy.io/usage/embeddings-transformers
 
 This package provides spaCy components and architectures to use transformer
 models via Hugging Face's transformers in spaCy. The result is convenient
