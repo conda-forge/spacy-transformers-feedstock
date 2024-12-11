@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/spacy-transformers/spacy_transformers-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/spacy-transformers/spacy_transformers-{{ version }}.tar.gz
   sha256: accdfe44a26517714c6990ec6bae88796eb348286fea7ba20ba2736f70c83fa1
 
 build:
