@@ -28,7 +28,6 @@ requirements:
     - setuptools
     - wheel
   run:
-    - numpy
     - python
     - pytorch >=1.8.0
     - spacy >=3.5.0,<4.1.0
@@ -62,6 +61,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - honnibal
-    - ines
-    - adrianeboyd
+    - conda-forge/spacy
