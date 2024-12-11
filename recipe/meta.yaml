@@ -32,6 +32,7 @@ requirements:
     - pytorch >=1.8.0
     - spacy >=3.5.0,<4.1.0
     - spacy-alignments >=0.7.2,<1.0.0
+    - sentencepiece
     - srsly >=2.4.0,<3.0.0
     - transformers >=3.4.0,<4.37.0
 
@@ -39,7 +40,6 @@ test:
   requires:
     - pytest
     - pip
-    - sentencepiece
   imports:
     - spacy_transformers
   commands:
