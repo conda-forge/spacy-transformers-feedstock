@@ -9,7 +9,7 @@ source:
   sha256: 87cf77094cf27737a7fc0c29da2cd8879756b5d58ff016d2ad01da54a0c8058a
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   # pytorch on windows not yet in conda-forge
   skip: true  # [win]
