@@ -1,12 +1,12 @@
-{% set version = "1.4.0" %}
+{% set version = "2.0.3" %}
 
 package:
   name: spacy-transformers
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/s/spacy-transformers/spacy_transformers-{{ version }}.tar.gz
-  sha256: 73831fc941ce11e661d452099053c138a764da49c16d32231bd5d4ea679f55ef
+  url: https://files.pythonhosted.org/packages/source/s/spacy-transformers/spacy_transformers-{{ version }}.tar.gz
+  sha256: b13750d7655c3954ee17d78acd44420a9e37061d1f18d8de94ea55d7196d9399
 
 build:
   number: 0
